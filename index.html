@@ -427,11 +427,21 @@ Miss you yarr bhle hi meri wajah se SBB kharab hua ho pr bhoot pyaar krta hu tum
         </div>
     </div>
 
-        <script>
+    <script>
         // --- SCREEN 1: Mobile Friendly Runaway Button Logic ---
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         let yesScale = 1;
+
+        // Position No button safely at start side by side
+        window.addEventListener('DOMContentLoaded', () => {
+            const btnContainer = document.querySelector('.btn-container');
+            if (btnContainer) {
+                const containerRect = btnContainer.getBoundingClientRect();
+                noBtn.style.left = (containerRect.width / 2 + 10) + 'px';
+                yesBtn.style.transform = 'translateX(-60px)';
+            }
+        });
 
         function moveNoButton(e) {
             // Prevent scrolling or double firing on mobile
@@ -447,6 +457,9 @@ Miss you yarr bhle hi meri wajah se SBB kharab hua ho pr bhoot pyaar krta hu tum
 
             const randomX = Math.max(20, Math.floor(Math.random() * maxX));
             const randomY = Math.max(40, Math.floor(Math.random() * maxY));
+
+            // Remove initial layout transform offset
+            yesBtn.style.transform = `scale(${yesScale})`;
 
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
@@ -477,7 +490,7 @@ Miss you yarr bhle hi meri wajah se SBB kharab hua ho pr bhoot pyaar krta hu tum
 
         function setupGame() {
             const grid = document.getElementById('emojiGrid');
-            grid.innerHTML = ''; // Clear layout map prevent duplication
+            grid.innerHTML = ''; // Clear layout map to prevent duplication
             
             let itemsMap = [true, true, true, false, false, false, false, false];
             itemsMap.sort(() => Math.random() - 0.5);
@@ -515,4 +528,38 @@ Miss you yarr bhle hi meri wajah se SBB kharab hua ho pr bhoot pyaar krta hu tum
                 grid.appendChild(card);
             }
         }
+
+        // --- ADDED NAVIGATION - SCREEN 3 TO 4: Open Video Page (via GO AHEAD button) ---
+        const goAheadBtn = document.getElementById('goAheadBtn');
+        
+        function openVideoPage(e) {
+            if (e) e.preventDefault();
+            document.getElementById('screen3').classList.add('hidden');
+            document.getElementById('screen4').classList.remove('hidden');
+            window.scrollTo(0, 0); // Scroll page to the top for the video view
+        }
+
+        if (goAheadBtn) {
+            goAheadBtn.addEventListener('click', openVideoPage);
+            goAheadBtn.addEventListener('touchstart', openVideoPage, { passive: false });
+        }
+
+        // --- ADDED NAVIGATION - SCREEN 4 TO 5: Open Letter Page (via TAP HERE button) ---
+        const tapHereBtn = document.getElementById('tapHereBtn');
+        const videoElement = document.getElementById('myVideo');
+        
+        function openLetterPage(e) {
+            if (e) e.preventDefault();
+            if (videoElement) videoElement.pause(); // Automatically pauses video when moving to letter
+            document.getElementById('screen4').classList.add('hidden');
+            document.getElementById('screen5').classList.remove('hidden');
+            window.scrollTo(0, 0); // Scroll page to the top for reading the letter
+        }
+
+        if (tapHereBtn) {
+            tapHereBtn.addEventListener('click', openLetterPage);
+            tapHereBtn.addEventListener('touchstart', openLetterPage, { passive: false });
+        }
     </script>
+
+        
