@@ -195,7 +195,7 @@
             padding: 5px;
         }
 /* Tap Here Button Style */
-        .tap-here-btn {
+        .action-btn {
             background-color: #f6ad55;
             color: white;
             padding: 15px 35px;
@@ -207,17 +207,49 @@
             animation: pulse 1.5s infinite;
         }
 
-        .tap-here-btn:hover {
+        .action-btn:hover {
             background-color: #ed8936;
         }
-
+        #readLetterBtn {
+            background-color: var(--pink-primary);
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+        }
+        #readLetterBtn:hover {
+            background-color: var(--pink-dark);
+        }
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        /* Screen 4: Video Container Styling */
+        .video-wrapper {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: #000;
+            margin-bottom: 20px;
+        }
 
-        /* Screen 4: Letter Page */
+         video {
+            width: 100%;
+            display: block;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .video-caption {
+            font-size: 1.05rem;
+            color: #4a4a4a;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1.5;
+            margin-top: 15px;
+            padding: 0 10px;
+        }
+        
+        /* Screen 5: Letter Page */
         .letter-page {
             max-width: 600px !important;
         }
