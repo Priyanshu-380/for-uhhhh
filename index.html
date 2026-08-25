@@ -189,20 +189,53 @@
             margin-top: 10px;
             font-size: 0.9rem;
             color: #555;
-            font-weight: 500;
+            font-style: italic;
+            font-weight: bold;
             line-height: 1.4;
             padding: 5px;
+        }
+/* Tap Here Button Style */
+        .tap-here-btn {
+            background-color: #f6ad55;
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            margin-top: 30px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(246, 173, 85, 0.4);
+            animation: pulse 1.5s infinite;
+        }
+
+        .tap-here-btn:hover {
+            background-color: #ed8936;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Screen 4: Letter Page */
+        .letter-page {
+            max-width: 600px !important;
         }
 
         .letter-box {
             background: #fffaf0;
             border-left: 4px solid #f6ad55;
-            padding: 20px;
+            padding: 25px;
             text-align: left;
-            border-radius: 4px;
-            margin-top: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
             white-space: pre-line;
             font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-weight: 550;
+            word-spacing: 2.5px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
     </style>
 </head>
@@ -229,7 +262,7 @@
     <!-- STEP 3: Final Photo & Letter Page (With Custom Captions) -->
     <div id="screen3" class="container final-page hidden">
         <h1>Our Beautiful Memories ✨</h1>
-        <p>Thank you for forgiving me. You mean the world to me, and I promise to be better! 💕</p>
+        <p>Thank you for loving me, and being with me everytime. You mean the world to me, and I promise to be better! 💕</p>
         
         <!-- Photo Gallery Layout with Captions -->
         <div class="photo-gallery">
@@ -239,7 +272,7 @@
                     <img src="your-photo1.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 1...</span>
                 </div>
-                <div class="photo-caption"> Ye chhoti si muskan baya kar rahi mere muskurane ki wajah🥰</div>
+                <div class="photo-caption"> "Ye chhoti si muskan baya kar rahi h mere muskurane ki wajah🥰"</div>
             </div>
 
             <!-- Photo 2 -->
@@ -248,7 +281,7 @@
                     <img src="your-photo2.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 2...</span>
                 </div>
-                <div class="photo-caption">Ye to hayeeeee!!💕😍 bhoot time tak meri favv photo rahi hai😗❤️</div>
+                <div class="photo-caption">"Ye to hayeeeee!!💕😍 bhoot time tak meri favv photo rahi hai😗❤️"</div>
             </div>
 
             <!-- Photo 3 -->
@@ -257,7 +290,7 @@
                     <img src="your-photo3.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 3...</span>
                 </div>
-                <div class="photo-caption"> Ufff ye bikhre baal and sparkling smile, My PENGUIN🥰 </div>
+                <div class="photo-caption">"Ufff ye bikhre baal and sparkling smile, My PENGUIN🥰" </div>
             </div>
 
             <!-- Photo 4 -->
@@ -266,7 +299,7 @@
                     <img src="your-photo4.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 4...</span>
                 </div>
-                <div class="photo-caption">The kiss right over my heart😭,I feel itttt🫁</div>
+                <div class="photo-caption">"The kiss right over my heart😭,I feel itttt🫁(Everytime i see this❣️)"</div>
             </div>
 
             <!-- Photo 5 -->
@@ -275,7 +308,7 @@
                     <img src="your-photo5.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 5...</span>
                 </div>
-                <div class="photo-caption">Isshhhh Ishhhhh Ishhhh🥹 isme toh mei kya hi bolu,My prettistt manifestation ever with myyy gurllll🤞🫶</div>
+                <div class="photo-caption">"Isshhhh Ishhhhh Ishhhh🥹 isme toh mei kya hi bolu,My prettistt manifestation ever with myyy gurllll🤞🫶"</div>
             </div>
 
             <!-- Photo 6 -->
@@ -284,7 +317,7 @@
                     <img src="your-photo6.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 6...</span>
                 </div>
-                <div class="photo-caption">A shocking and memorable day Frrrr🥹 (Btw it suits youu!✨)</div>
+                <div class="photo-caption">"A shocking and memorable day Frrrr🥹 (Btw it suits youu princess!👸)"</div>
             </div>
 
             <!-- Photo 7 -->
@@ -293,7 +326,7 @@
                     <img src="your-photo7.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 7...</span>
                 </div>
-                <div class="photo-caption"> The dream come true moment when i saw you in saree👸💓</div>
+                <div class="photo-caption"> "The dream come true moment when i saw you in saree👸💓"</div>
             </div>
 
             <!-- Photo 8 -->
@@ -302,7 +335,7 @@
                     <img src="your-photo8.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 8...</span>
                 </div>
-                <div class="photo-caption">Uffff🫰All i want to say is "Tum sharmati,itrati achi lagti ho!!😌</div>
+                <div class="photo-caption">Uffff🫰All i want to say is "Tum sharmati,itrati achi lagti ho!!😌"</div>
             </div>
 
             <!-- Photo 9 -->
@@ -311,7 +344,7 @@
                     <img src="your-photo9.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 9...</span>
                 </div>
-                <div class="photo-caption">Ultimate favv,"Thukraogi, thukra lo hum thokar kha kar bhi tumhare dar pe aayenge, tadapogi tadpa loo💘🌎</div>
+                <div class="photo-caption">Ultimate favv,"Thukraogi, thukra lo hum thokar kha kar bhi tumhare dar pe aayenge, tadapogi tadpa loo💘🌎"</div>
             </div>
         </div>
 
