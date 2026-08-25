@@ -210,11 +210,11 @@
         .action-btn:hover {
             background-color: #ed8936;
         }
-        #readLetterBtn {
+        #tapHereBtn {
             background-color: var(--pink-primary);
             box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
         }
-        #readLetterBtn:hover {
+        #tapHereBtn:hover {
             background-color: var(--pink-dark);
         }
         @keyframes pulse {
@@ -240,13 +240,13 @@
         }
 
         .video-caption {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             color: #4a4a4a;
             font-weight: bold;
             font-style: italic;
             line-height: 1.5;
             margin-top: 15px;
-            padding: 0 10px;
+            padding: 5px;
         }
         
         /* Screen 5: Letter Page */
@@ -254,7 +254,7 @@
             max-width: 600px !important;
         }
 
-        .letter-box {
+        .letter-box,.shayari-box {
             background: #fffaf0;
             border-left: 4px solid #f6ad55;
             padding: 25px;
@@ -291,7 +291,7 @@
         <div class="emoji-grid" id="emojiGrid"></div>
     </div>
 
-    <!-- STEP 3: Final Photo & Letter Page (With Custom Captions) -->
+    <!-- STEP 3: Photo Page Gallery (With Custom Captions) -->
     <div id="screen3" class="container final-page hidden">
         <h1>Our Beautiful Memories ✨</h1>
         <p>Thank you for loving me, and being with me everytime. You mean the world to me, and I promise to be better! 💕</p>
@@ -340,7 +340,7 @@
                     <img src="your-photo5.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 5...</span>
                 </div>
-                <div class="photo-caption">"Isshhhh Ishhhhh Ishhhh🥹 isme toh mei kya hi bolu,My prettistt manifestation ever with myyy gurllll🤞🫶"</div>
+                <div class="photo-caption">"Isshhhh Ishhhhh Ishhhh🥹 isme toh mei kya hi bolu,My prettistt manifestation ever with myyy gurllll🤞🏻🫶🏻"</div>
             </div>
 
             <!-- Photo 6 -->
@@ -367,7 +367,7 @@
                     <img src="your-photo8.jpg" alt="" onerror="this.style.display='none'">
                     <span>📸 Loading Photo 8...</span>
                 </div>
-                <div class="photo-caption">Uffff🫰All i want to say is "Tum sharmati,itrati achi lagti ho!!😌"</div>
+                <div class="photo-caption">Uffff🫰🏻All i want to say is "Tum sharmati,itrati achi lagti ho!!😌"</div>
             </div>
 
             <!-- Photo 9 -->
@@ -378,17 +378,52 @@
                 </div>
                 <div class="photo-caption">Ultimate favv,"Thukraogi, thukra lo hum thokar kha kar bhi tumhare dar pe aayenge, tadapogi tadpa loo💘🌎"</div>
             </div>
+            <!--Button Renamed To GO AHEAD--->
+            <button class="action-btn" id="goAheadBtn">GO AHEAD➡️</button>
+        </div>
+       
+        <!-- NEW SCREEN 4: Inserted Video Page -->
+    <div id="screen4" class="container hidden">
+        <h1>A Special Clip For You 🎥</h1>
+        <p>A little video compilation of you that always makes me smile... ❤️</p>
+        
+        <div class="video-wrapper">
+            <video id="myVideo" controls playsinline>
+                <source src="our-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
-        <!-- Personal Letter Box -->
+        <div class="video-caption">
+            "Look at this! This is my absolute favorite clip. You are so cute here, and I miss making you this much comfortable around me"❤️
+        </div>
+
+        <!-- NEW: Your Shayari Box (Styled exactly like the letter) -->
+        <div class="shayari-box">
+            "Tu ruth ja mujhse bhle hi pr ojhal na ho aankon se🫂, 
+            sbka hona jese mitti bs tu ek alg h lakhon se🫰🏻
+            Tujhe paa lena koi sapna thodi h 🌙
+            Tu toh kismat h meri h jo bhagwan ne likhi h khud apne hathon se❤️✨"
+
+Miss you yarr bhle hi meri wajah se SBB kharab hua ho pr bhoot pyaar krta hu tumse 🫶🏻🦋
+            
+        </div>
+
+        <!-- Button named TAP HERE connects to the letter -->
+        <button class="action-btn" id="tapHereBtn">TAP HERE 💌</button>
+    </div>
+
+        <!-- SCREEN5: Personal Letter Box -->
+        <div id="screen5" class="container letter-page hidden">
+            <h1>A Letter For Uhhhh🫵🏻🔗❤️ </h1>
         <div class="letter-box">
             Dear Akkuu,
-                i know you are very khafa khafa with me❤️‍🩹 and i felt very veryyy sorryyyyy as the reason is ofcourse me, but above all that i love you forever♾️, your presence is my breath without you i am nothing🫁, there doesn't exist any time in my whole day and night jb tumko miss na karta hou😭,life feels incomplete without my world and its you🫵🌍,your absence is the greatest lesson i have ever learned nothing could teach me the importance of you in my chhotu si zindgani🥹 better than this🫶.I am nothing without my soul i know i hurted you bhooot zyada💔 and it can't be neglected but at the same time i pleade to fix all the issues between us, its my responsibility now to treat you the way i always wanted to, the way you deserve, and you deserve the best!!💕All this,that happened has washed-off all my habits which should never be there🫰,changed me completely.I recognised-realise my flaws and worked upon them to be the one i desired🐧,it may take time to reflect everyting but for sure the life ahead would be much more beautiful than we had dreamed together.  
+                i know you are very khafa khafa with me❤️‍🩹 and i felt very veryyy sorryyyyy as the reason is ofcourse me, but above all that i love you forever♾️, your presence is my breath without you i am nothing🫁, there doesn't exist any time in my whole day and night jb tumko miss na karta hou😭,life feels incomplete without my world and its you🫵🏻🌍,your absence is the greatest lesson i have ever learned nothing could teach me the importance of you in my chhotu si zindgani🥹 better than this🫶🏻.I am nothing without my soul i know i hurted you bhooot zyada💔 and it can't be neglected but at the same time i pleade to fix all the issues between us, its my responsibility now to treat you the way i always wanted to, the way you deserve, and you deserve the best!!💕All this,that happened has washed-off all my habits which should never be there🤞🏻,changed me completely.I recognised-realise my flaws and worked upon them to be the one i desired🐧,it may take time to reflect everyting but for sure the life ahead would be much more beautiful than we had dreamed together🫰🏻.  
 
             Every single moment spent with you is very special. I love you💜 to the moon and back! 🌙✨
             
             Yours forever♾️,
-            your Priyanshu🤞(urf tarr tarr🐸)
+            your Priyanshu🤞🏻(urf tarr tarr🐸)
         </div>
     </div>
 
@@ -437,7 +472,7 @@
         yesBtn.addEventListener('touchstart', handleYesAction, { passive: false });
 
         // --- SCREEN 2: 8 Emojis & 3 Hidden Hearts Logic ---
-        const emojisList = ['🌸', '🐱', '🦋', '🧸', '🐣', '🦄', '🥑', '⭐'];
+        const emojisList = ['🌸', '🐱', '🦋', '🧸', '🐣', '🌿', '🐛', '⭐'];
         let heartsFound = 0;
 
         function setupGame() {
