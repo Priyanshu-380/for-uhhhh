@@ -313,5 +313,102 @@
 
         <!-- Personal Letter Box -->
         <div class="letter-box">
-            Dear [Her Name],
+            Dear Akkuu,
+                i know you are very khafa khafa with me❤️‍🩹 and i felt very veryyy sorryyyyy as the reason is ofcourse me, but above all that i love you forever♾️, your presence is my breath without you i am nothing🫁, there doesn't exist any time in my whole day and night jb tumko miss na karta hou😭,life feels incomplete without my world and its you🫵🌍,your absence is the greatest lesson i have ever learned nothing could teach me the importance of you in my chhotu si zindgani🥹 better than this🫶.I am nothing without my soul i know i hurted you bhooot zyada💔 and it can't be neglected but at the same time i pleade to fix all the issues between us, its my responsibility now to treat you the way i always wanted to, the way you deserve, and you deserve the best!!💕All this,that happened has washed-off all my habits which should never be there🫰,changed me completely.I recognised-realise my flaws and worked upon them to be the one i desired🐧,it may take time to reflect everyting but for sure the life ahead would be much more beautiful than we had dreamed together.  
 
+            Every single moment spent with you is very special. I love you💜 to the moon and back! 🌙✨
+            
+            Yours forever♾️,
+            your Priyanshu🤞(urf tarr tarr🐸)
+        </div>
+    </div>
+
+        <script>
+        // --- SCREEN 1: Mobile Friendly Runaway Button Logic ---
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        let yesScale = 1;
+
+        function moveNoButton(e) {
+            // Prevent scrolling or double firing on mobile
+            if (e && e.type === 'touchstart') e.preventDefault();
+
+            const container = document.getElementById('screen1');
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+
+            // Safe boundaries inside the container
+            const maxX = containerRect.width - btnRect.width - 40;
+            const maxY = containerRect.height - btnRect.height - 40;
+
+            const randomX = Math.max(20, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(40, Math.floor(Math.random() * maxY));
+
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+
+            // Increase Yes button size
+            yesScale += 0.15;
+            yesBtn.style.transform = `scale(${yesScale})`;
+        }
+
+        // Desktop mouse hover and Mobile touch separation
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('touchstart', moveNoButton, { passive: false });
+
+        // PERFECT MOBILE CLICK FOR YES BUTTON
+        function handleYesAction(e) {
+            if (e) e.preventDefault();
+            document.getElementById('screen1').classList.add('hidden');
+            document.getElementById('screen2').classList.remove('hidden');
+            setupGame();
+        }
+
+        yesBtn.addEventListener('click', handleYesAction);
+        yesBtn.addEventListener('touchstart', handleYesAction, { passive: false });
+
+        // --- SCREEN 2: 8 Emojis & 3 Hidden Hearts Logic ---
+        const emojisList = ['🌸', '🐱', '🦋', '🧸', '🐣', '🦄', '🥑', '⭐'];
+        let heartsFound = 0;
+
+        function setupGame() {
+            const grid = document.getElementById('emojiGrid');
+            grid.innerHTML = ''; // Clear layout map prevent duplication
+            
+            let itemsMap = [true, true, true, false, false, false, false, false];
+            itemsMap.sort(() => Math.random() - 0.5);
+
+            for (let i = 0; i < 8; i++) {
+                const card = document.createElement('div');
+                card.classList.add('emoji-card');
+                card.innerText = emojisList[i];
+                
+                function handleCardClick(e) {
+                    if (e) e.preventDefault();
+                    if (card.classList.contains('revealed')) return;
+                    
+                    card.classList.add('revealed');
+                    if (itemsMap[i]) {
+                        card.innerText = '❤️';
+                        heartsFound++;
+                        document.getElementById('countLabel').innerText = heartsFound;
+                        
+                        if (heartsFound === 3) {
+                            setTimeout(() => {
+                                document.getElementById('screen2').classList.add('hidden');
+                                document.getElementById('screen3').classList.remove('hidden');
+                            }, 800);
+                        }
+                    } else {
+                        card.innerText = '❌';
+                        card.style.opacity = '0.5';
+                    }
+                }
+
+                card.addEventListener('click', handleCardClick);
+                card.addEventListener('touchstart', handleCardClick, { passive: false });
+                
+                grid.appendChild(card);
+            }
+        }
+    </script>
